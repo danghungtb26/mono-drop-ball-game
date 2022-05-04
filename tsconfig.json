@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@*": ["src/*"],
+      // "@*": ["src/*"],
       "@drop-ball/*": ["./packages/*"]
     },
     "target": "es5",
