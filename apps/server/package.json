@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start:s": "node dist/index.js",
+    "start": "nodemon",
     "dev:ts": "nodemon",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
   },

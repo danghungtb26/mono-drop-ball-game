@@ -6,7 +6,7 @@
     "plugin:react-hooks/recommended",
     "airbnb"
   ],
-  "plugins": ["react", "jsx-a11y", "import", "prettier", "@typescript-eslint", "eslint-comments", "react-hooks"],
+  "plugins": ["jsx-a11y", "import", "prettier", "@typescript-eslint", "eslint-comments", "react-hooks"],
   "rules": {
     "react/jsx-filename-extension": [
       1,
