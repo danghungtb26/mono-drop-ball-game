@@ -1,7 +1,9 @@
+import { BallFrame } from './BallFrame'
 import { Point } from './Point'
 import { Vector } from './Vector'
 
 export type BallPropType = {
+  id?: number
   x: number
   y: number
   dx: number
@@ -10,7 +12,16 @@ export type BallPropType = {
   omega: number
   accel?: number
   radius?: number
+  frames?: BallFrame[]
 }
+
+export type BallPropType2 = {
+  position: Point
+  velocity: Vector
+  frames: BallFrame[]
+  id: number
+}
+
 export class Ball {
   id: number = 0
 
@@ -26,8 +37,12 @@ export class Ball {
 
   rotation: number = 0
 
+  frames: BallFrame[] = []
+
+  current_frame: number = 0
+
   constructor(json: BallPropType) {
-    this.id = Ball.id
+    this.id = json.id ?? Ball.id
     Ball.id += 1
     this.position = new Point(json.x, json.y)
     this.velocity = new Vector(json.dx, json.dy)
@@ -35,6 +50,8 @@ export class Ball {
     this.omega = json.omega
     this.accel = json.accel ?? 150
     this.radius = json.radius ?? 1
+    this.frames = json?.frames ?? []
+    this.current_frame = 0
   }
 
   public update() {}
@@ -56,5 +73,23 @@ export class Ball {
     const z1 = magnitude * Math.sin(two_pi * u2) + mu
 
     return new Vector(z0, z1)
+  }
+
+  public static fromJsonPositionAndVector<T extends Ball>(json: {
+    position: Point
+    velocity: Vector
+    frames: BallFrame[]
+    id: number
+  }): T {
+    return new this({
+      x: json.position.x,
+      y: json.position.y,
+      dx: json.velocity.x,
+      dy: json.velocity.y,
+      rotation: 0,
+      omega: 100,
+      frames: json.frames,
+      id: json.id,
+    }) as T
   }
 }

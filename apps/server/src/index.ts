@@ -1,7 +1,7 @@
-import express, { Express, Request, Response } from 'express'
+import express, { Express } from 'express'
 import dotenv from 'dotenv'
-import { drop_position } from './constants/define'
-import { Ball } from './models/Ball'
+import cors from 'cors'
+
 import route from './apis/ball'
 
 dotenv.config()
@@ -9,6 +9,7 @@ dotenv.config()
 const app: Express = express()
 const port = process.env.PORT
 
+app.use(cors({ origin: '*', methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'] }))
 app.use('/api', route)
 
 app.listen(port, () => {

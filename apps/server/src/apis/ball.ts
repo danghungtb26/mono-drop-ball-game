@@ -9,10 +9,7 @@ route.post('/ball', async (_req: Request, res: Response) => {
   const ball = Ball.newBall()
   await ball.start()
   res.send({
-    data: {
-      ball: ball.data,
-    },
-    status: 'success',
+    ball: ball.data,
   })
 })
 

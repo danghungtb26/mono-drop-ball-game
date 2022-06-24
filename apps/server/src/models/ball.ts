@@ -5,7 +5,7 @@ import Pegboard from './Pegboard'
 export class Ball extends BallModel {
   private mData: any[] = []
 
-  private frame: number = 1
+  frame: number = 1
 
   constructor(props: BallPropType) {
     super(props)
@@ -43,7 +43,10 @@ export class Ball extends BallModel {
   }
 
   get data() {
-    return this.mData
+    return {
+      frames: this.mData,
+      id: this.id,
+    }
   }
 
   async updateOneFrame() {
@@ -64,10 +67,7 @@ export class Ball extends BallModel {
         let collide_peg = Pegboard.findNearestPeg(new_pos, kPegSearchRadius)
         if (collide_peg == null) {
           this.position.copyFrom(new_pos)
-          console.log(
-            '🚀 ~ file: ball.ts ~ line 69 ~ Ball ~ updateOneFrame ~ this.position',
-            this.position
-          )
+
           // this.update()
           time_to_sim -= time_step
           // eslint-disable-next-line no-continue

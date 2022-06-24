@@ -3,6 +3,7 @@ const { getLoader, loaderByName } = require('@craco/craco')
 
 const packages = []
 packages.push(path.join(__dirname, '../../packages/model'))
+packages.push(path.join(__dirname, '../../packages/api'))
 
 module.exports = {
   webpack: {

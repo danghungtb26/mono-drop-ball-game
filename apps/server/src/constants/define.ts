@@ -17,7 +17,7 @@ export const kHalfWallSize = kWallSize / 2
 
 export const kWidth = width - kMargin * 2
 
-export const drop_position = new Point(kWidth / 2, kDropSideHeight - 20)
+export const drop_position = new Point(kWidth / 2, kDropSideHeight - 60)
 
 export const kColumns = 17
 

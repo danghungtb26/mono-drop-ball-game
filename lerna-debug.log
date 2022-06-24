@@ -1,12 +1,12 @@
 0 silly argv {
 0 silly argv   _: [ 'add' ],
-0 silly argv   globs: [],
+0 silly argv   globs: [ 'apps/web_react' ],
 0 silly argv   lernaVersion: '4.0.0',
 0 silly argv   '$0': '/Users/hungdv/code/repo/free/mono-drop-ball/node_modules/.bin/lerna',
-0 silly argv   pkg: 'packages/model'
+0 silly argv   pkg: 'anth'
 0 silly argv }
 1 notice cli v4.0.0
 2 verbose rootPath /Users/hungdv/code/repo/free/mono-drop-ball
-3 error Error: An unknown git error occurred
-3 error     at makeError (/Users/hungdv/code/repo/free/mono-drop-ball/node_modules/@npmcli/git/lib/make-error.js:28:13)
-3 error     at /Users/hungdv/code/repo/free/mono-drop-ball/node_modules/@npmcli/git/lib/spawn.js:36:26
+3 error TypeError: Cannot convert undefined or null to object
+3 error     at Function.keys (<anonymous>)
+3 error     at module.exports (/Users/hungdv/code/repo/free/mono-drop-ball/node_modules/npm-pick-manifest/index.js:213:22)

@@ -37,7 +37,7 @@ class PegBoardModel extends BasePegBoardModel {
 
   toJson() {
     return {
-      pegs: this.pegs,
+      pegs: this.pegs.map(i => i.toJson()),
       width: this.width,
       height: this.height,
     }

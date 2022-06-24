@@ -80,11 +80,14 @@
     "Headers": true,
     "Request": true,
     "fetch": true,
-    "alert": true
+    "alert": true,
+    "requestAnimationFrame": true,
+    "cancelAnimationFrame": true
   },
   "settings": {
     "import/core-modules": [
-        "@drop-ball/model"
+        "@drop-ball/model",
+        "@drop-ball/api"
       ]
   }
 }
